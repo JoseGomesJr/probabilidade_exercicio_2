@@ -1,7 +1,7 @@
 library(readxl)
 library(Hmisc)
 library(dplyr) 
-planilha <- read_excel("/home/jose/Documentos/probabilidade_exercicio_2/ENEM_AL_EXCEL_AJUS_OKSNZ.xlsx")
+planilha <- read_excel("ENEM_AL_EXCEL_AJUS_OKSNZ.xlsx")
 dados <- as.data.frame(planilha)
 
 municipios <- unique(dados$NO_MUNICIPIO_PROVA)
