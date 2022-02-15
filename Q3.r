@@ -1,6 +1,6 @@
 library(readxl)
 library(Hmisc)
-library(dplyr) 
+library(dplyr)
 planilha <- read_excel("ENEM_AL_EXCEL_AJUS_OKSNZ.xlsx")
 dados <- as.data.frame(planilha)
 
@@ -39,7 +39,7 @@ agreste <- c(media_Palmeira, media_Arapiraca, media_Traipu, media_Igaci, media_G
 
 muni_agrste <- c(municipios[9], municipios[10], municipios[11], municipios[13], municipios[25])
 
-dados_agreste <- data.frame(Nome = muni_agrste, Media=agreste, Região = "Agreste")
+dados_agreste <- data.frame(Nome = muni_agrste, Media = agreste, Região = "Agreste")
 
 # ----------------------- SERTÃO --------------------------
 
@@ -74,13 +74,13 @@ dados_olhoDagua <- subset(dados, dados$NO_MUNICIPIO_PROVA == municipios[16])
 
 media_OlhoDagua <- mean(dados_olhoDagua$NOTA_ENEN)
 
-sertao <- c(media_AguaBranca,media_Batalha,media_DelmiroGouveia,media_SaoJosetapera, media_Santana, media_OlhoDagua)
+sertao <- c(media_AguaBranca, media_Batalha, media_DelmiroGouveia, media_SaoJosetapera, media_Santana, media_OlhoDagua)
 
 muni_sertao <- c(municipios[12], municipios[14], municipios[20], municipios[4], municipios[7], municipios[16])
 
 
 
-dados_sertao <- data.frame(Nome = muni_sertao, Media=sertao, Região = "Sertão")
+dados_sertao <- data.frame(Nome = muni_sertao, Media = sertao, Região = "Sertão")
 # ----------------------- LESTE -----------------------
 
 
@@ -163,10 +163,10 @@ media_Coruripe <- mean(dados_coruripe$NOTA_ENEN)
 leste <- c(media_RioLargo, media_Maceio, media_Porto, media_SaoMiguel, media_Vilela, media_CampoAlegre, media_Vicosa, media_SaoLuis, media_Uniao, media_Atalaia, media_Penedo, media_Pilar, media_Boca, media_Marechal, media_Coruripe)
 
 
-muni_leste <- c(municipios[1], municipios[2], municipios[3], municipios[5], municipios[6], municipios[7], municipios[15], municipios[17],  municipios[18], municipios[19], municipios[21], municipios[22], municipios[23], municipios[24], municipios[26])
+muni_leste <- c(municipios[1], municipios[2], municipios[3], municipios[5], municipios[6], municipios[7], municipios[15], municipios[17], municipios[18], municipios[19], municipios[21], municipios[22], municipios[23], municipios[24], municipios[26])
 
 
-dados_leste <- data.frame(Nome = muni_leste, Media=leste, Região = "Leste")
+dados_leste <- data.frame(Nome = muni_leste, Media = leste, Região = "Leste")
 
 Media_Reg <- bind_rows(dados_agreste, dados_sertao, dados_leste)
 
